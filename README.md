@@ -53,6 +53,9 @@ const card = buildDom({
                 props: {
                     className: "card-text text-sm card-location",
                     innerHTML: "some text..."
+                },
+                events: {
+                    click: e => { console.log("clicked"); }
                 }
             }
         ]
