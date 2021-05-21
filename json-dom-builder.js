@@ -1,9 +1,18 @@
 /**
  * 
+ * @param {String} selector 
+ * @param {Object} node 
+ */
+var appendNewElement = (selector, node) => {
+    document.querySelector(selector).append(newElement(node));
+}
+
+/**
+ * 
  * @param {Object} node - An object that represent the structure of the DOM.
  * @returns DOM element
  */
- const buildDom = (node) => {
+ var newElement = (node) => {
 
     const ele = document.createElement(node.type);
 
@@ -24,7 +33,7 @@
     if (node.children) {
   
         node.children.forEach( child => {
-            const childEle = buildDom(child);
+            const childEle = newElement(child);
             ele.append(childEle)
         });
     }
